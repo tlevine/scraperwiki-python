@@ -237,8 +237,8 @@ class TestSaveColumn(TestCase):
                         stdout=PIPE, stderr=PIPE, stdin=open("/dev/null"))
         stdout, stderr = process.communicate()
         assert process.returncode == 0
-        self.assertEqual(stdout, "")
-        self.assertEqual(stderr, "")
+        self.assertEqual(stdout, "".encode('utf-8'))
+        self.assertEqual(stderr, "".encode('utf-8'))
 
 
 class TestSave(SaveAndCheck):
